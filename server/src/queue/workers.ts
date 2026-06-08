@@ -4,7 +4,7 @@ import { emailClient } from "../services/email";
 
 import { v4 as uuid } from "uuid"
 
-new Worker("emails", async job => {
+new Worker("emails", async (job) => {
     const parsedData = job.data.parsed
 
     await emailClient.saveEmail({
@@ -39,8 +39,11 @@ new Worker("emails", async job => {
 
       receivedAt:
         new Date().toISOString()
-    }),
+    })},
     {
-        connection: redis
+        connection: {
+          host: "redis",
+          port: 6379
+        }
     }
-})
+)
