@@ -5,6 +5,9 @@ async function main() {
     host: "localhost",
     port: 1025,
     secure: false,
+
+    logger: true,
+    debug: true
   });
 
   await transporter.sendMail({

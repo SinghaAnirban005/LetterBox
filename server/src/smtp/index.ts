@@ -4,6 +4,9 @@ import { emailQueue } from "../queue/queue";
 
 export const smtpServer = new SMTPServer({
     authOptional: true,
+    secure: false,
+
+    disabledCommands: ['AUTH', 'STARTTLS'],
 
     async onData(stream, session, callback) {
         try {
@@ -11,7 +14,7 @@ export const smtpServer = new SMTPServer({
     
             await emailQueue.add(
                 "capture-email",
-    
+
                 {
                     parsedData
                 }

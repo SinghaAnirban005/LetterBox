@@ -1,11 +1,19 @@
 import express from "express"
 import { smtpServer } from "./smtp"
+import cors from "cors"
+import "dotenv/config"
 
 import emailRouter from "./routers/email.router"
 
 const app = express()
+app.use(cors(
+    {
+        origin: '*'
+    }
+))
 
 app.use(express.json())
+
 
 app.use('/api/v1/emails', emailRouter)
 
