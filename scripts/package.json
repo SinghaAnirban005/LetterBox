@@ -1,0 +1,9 @@
+{
+	"dependencies": {
+		"nodemailer": "^8.0.10",
+		"tsx": "^4.22.4"
+	},
+	"scripts": {
+		"script": "tsx ./index.ts"
+	}
+}
