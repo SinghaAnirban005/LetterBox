@@ -3,6 +3,8 @@ import { smtpServer } from "./smtp"
 import cors from "cors"
 import "dotenv/config"
 
+import "./queue/workers"
+
 import emailRouter from "./routers/email.router"
 
 const app = express()

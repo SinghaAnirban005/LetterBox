@@ -5,7 +5,7 @@ import { emailClient } from "../services/email";
 import { v4 as uuid } from "uuid"
 
 new Worker("emails", async (job) => {
-    const parsedData = job.data.parsed
+    const parsedData = job.data.parsedData
 
     await emailClient.saveEmail({
         id: uuid(),

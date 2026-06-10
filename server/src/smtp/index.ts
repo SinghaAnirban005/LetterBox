@@ -10,7 +10,7 @@ export const smtpServer = new SMTPServer({
 
     async onData(stream, session, callback) {
         try {
-            const parsedData = simpleParser(stream)
+            const parsedData = await simpleParser(stream)
     
             await emailQueue.add(
                 "capture-email",

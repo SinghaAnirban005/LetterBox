@@ -15,13 +15,13 @@ export class emailService {
     }
 
     async getEmails() {
-        const emails = await redis.lrange("emails", 0, 100)
+        const emails = await redis.lrange(this.KEY, 0, 100)
 
         return emails
     }
 
     async delEmails() {
-        await redis.del("emails")
+        await redis.del(this.KEY)
     }
 }  
 

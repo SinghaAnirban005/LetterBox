@@ -12,11 +12,11 @@ async function main() {
 
   await transporter.sendMail({
     from: "test@smtp-drain.dev",
-    to: "anirban@example.com",
+    to: "anirban20@gmail.com",
     subject: "SMTP Drain Test",
     html: `
-      <h1>Hello!</h1>
-      <p>This email should appear in SMTP Drain.</p>
+      <h1>HI there!</h1>
+      <p>I hope you are doing well.</p>
     `,
   });
 
